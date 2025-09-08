@@ -45,3 +45,14 @@ In `mod.rs` which we will built in content dir. we can write
 `pub mod catalog;`
 
 we can't skip this hirerachy levels. Root module can't directly access this
+
+`super` is a keyword to target parent
+
+eg. from catalog if i want to use media, then in catalog file we can use code like `use` `super::media::Media`
+
+The above code will get the Media struct from media.rs file by getting it from module referrenced in `mod.rs` file
+
+In `main.rs` if we want to import any module, we can use `mod content`, this will import everything written in `mod.rs` file. And to use any thing we can `use` keyword
+
+
+---------------------------
