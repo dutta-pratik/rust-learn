@@ -82,3 +82,52 @@ here in tuple(tuple is **()**), it is like struct but we don't have lable, we as
 we can send empty tuple () whereever we don't have the value to send.
 
 Eg, in Result enum, we have **Ok()**, let's say if we don't have any value to send we can use send empty tuple like **Ok(())**. When we have to  receive value, we can use **Ok(..)** since we don't have any value for **Ok** so we use **..** as placeholder
+
+
+---
+
+**'a**
+
+
+---
+
+There are **three** area in **memory**
+	**Stack** - Fast, but limited size(generally 2-8 MB)
+	**Heap** - Slow, but can grow to store a lot of data
+	**Data Segment/Rodata Segment/Static Segment(**these can be interchangebly used) - store literal values that we write into our code
+
+Rodata full form is Read only data
+
+**Common Pattern**
+Stack stores metadata about a data structure
+Heap stores the actual data
+*Corner Case* - If a data structure owns another data structure, the child's metadata will be placed on the heap
+
+---
+
+
+
+**String**
+
+**&String**
+
+**&str -** call as String slice
+
+
+---
+
+**?** operator
+
+we can use it when we can expect Result enum.
+
+**?** will unwrap the **Ok** value and assign it to the binding available
+
+In case of **Err**, **?** will unwrap the error value and directly return and stop code from going to next line
+
+eg.
+`let txt = fs::read_file('logs.txt')?;
+println!("{}", txt);`
+
+if it successfully reads the file, and if `read_file` function return `Ok('xyz')` from **Result** enum, it will store it in `txt` binding and print it in second line
+
+But in case if we receive error while reading the file, the **Err** will unwrap and will directly return the value present in the `Err(Error:other("Fail to read"));` and will not go to next line to print `txt`
