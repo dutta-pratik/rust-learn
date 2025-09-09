@@ -15,9 +15,7 @@ enum Option{
 
 `Some` and `None` can also be used to indicate the presence or absence of some value in a struct field.
 
-
----------------------------
-
+---
 
 Every file and folder makes its own seperate module
 
@@ -54,5 +52,33 @@ The above code will get the Media struct from media.rs file by getting it from m
 
 In `main.rs` if we want to import any module, we can use `mod content`, this will import everything written in `mod.rs` file. And to use any thing we can `use` keyword
 
+---
 
----------------------------
+**Result** enum, it has Ok(Value) and Err(Error)
+
+Error is an Object in Rust
+
+
+
+---
+
+**Match** variable is used to evaluate value
+
+match function(a, b){
+
+    //code or if we are using Option/Result enum we can evaultate/receive value here
+
+}
+
+
+---
+
+**Tuple**
+
+`type x = (u8, u8, u8)`
+
+here in tuple(tuple is **()**), it is like struct but we don't have lable, we as a developer need to reemeber what does every placeholder means. on the above eg, u8 is an datatype
+
+we can send empty tuple () whereever we don't have the value to send.
+
+Eg, in Result enum, we have **Ok()**, let's say if we don't have any value to send we can use send empty tuple like **Ok(())**. When we have to  receive value, we can use **Ok(..)** since we don't have any value for **Ok** so we use **..** as placeholder
