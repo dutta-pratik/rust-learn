@@ -134,3 +134,28 @@ At first, next point to the first element of the vector. when we call `next()` i
 `map` is an *adaptor* which is used to format element from iter object
 
 `for_each` is a function that is a iterator *consumer*. it calls `next()` automatically
+
+
+---
+
+**Vector Slice**
+
+we pass vector slice to any function as `&[String]` eg(&[data-type])
+
+fn main(){
+	let colors = vec![
+		String::from("red"),
+		String::from("green"),
+		String::from("blue"),
+	];
+	print_ele(`&colors[1..3]`) //argument
+}
+
+fn print_ele(ele: `&[String]`){//parameter
+	/*code*/
+}
+
+Above function will work because we are sending a slice of vector as argument(eg. `&colors[1..3]`) and we are receivng it in params as `&[String]`
+
+If we are sending a whole vector as an argument(eg. `&colors`) than `&[String]` and `&Vec <String>` both will work as function param,
+but if we send vector slice as argument(eg. `&colors[1..3]`), then `&Vec <String>` will throw error/warning in the function param.
