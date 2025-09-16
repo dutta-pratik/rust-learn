@@ -58,8 +58,6 @@ In `main.rs` if we want to import any module, we can use `mod content`, this wil
 
 Error is an Object in Rust
 
-
-
 ---
 
 **Match** variable is used to evaluate value
@@ -69,7 +67,6 @@ match function(a, b){
     //code or if we are using Option/Result enum we can evaultate/receive value here
 
 }
-
 
 ---
 
@@ -83,11 +80,9 @@ we can send empty tuple () whereever we don't have the value to send.
 
 Eg, in Result enum, we have **Ok()**, let's say if we don't have any value to send we can use send empty tuple like **Ok(())**. When we have to  receive value, we can use **Ok(..)** since we don't have any value for **Ok** so we use **..** as placeholder
 
-
 ---
 
 **'a**
-
 
 ---
 
@@ -105,14 +100,11 @@ Heap stores the actual data
 
 ---
 
-
-
 **String**
 
 **&String**
 
 **&str -** call as String slice
-
 
 ---
 
@@ -125,9 +117,20 @@ we can use it when we can expect Result enum.
 In case of **Err**, **?** will unwrap the error value and directly return and stop code from going to next line
 
 eg.
-`let txt = fs::read_file('logs.txt')?;
-println!("{}", txt);`
+`let txt = fs::read_file('logs.txt')?; println!("{}", txt);`
 
 if it successfully reads the file, and if `read_file` function return `Ok('xyz')` from **Result** enum, it will store it in `txt` binding and print it in second line
 
 But in case if we receive error while reading the file, the **Err** will unwrap and will directly return the value present in the `Err(Error:other("Fail to read"));` and will not go to next line to print `txt`
+
+
+---
+
+**Iterator**
+
+iterator is a strcut that point to a data structure. it will not traverse the DS until `next()` function is called.
+At first, next point to the first element of the vector. when we call `next()` it will print first value and then the next pointer will shift to next value, when we again call `next()` function, it'll again print the value and sift the next pointer to the next value. at last we have `None` where the next will stop the code to go to next level.
+
+`map` is an *adaptor* which is used to format element from iter object
+
+`for_each` is a function that is a iterator *consumer*. it calls `next()` automatically
