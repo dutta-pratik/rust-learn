@@ -159,3 +159,9 @@ Above function will work because we are sending a slice of vector as argument(eg
 
 If we are sending a whole vector as an argument(eg. `&colors`) than `&[String]` and `&Vec <String>` both will work as function param,
 but if we send vector slice as argument(eg. `&colors[1..3]`), then `&Vec <String>` will throw error/warning in the function param.
+
+---
+
+In rust, you can't do arithemetic in different type of numbers.
+
+Rust doesn't by default do type conversion.
