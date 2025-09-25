@@ -165,3 +165,19 @@ but if we send vector slice as argument(eg. `&colors[1..3]`), then `&Vec <String
 In rust, you can't do arithemetic in different type of numbers.
 
 Rust doesn't by default do type conversion.
+
+---
+
+A **trait** is a set of methods
+
+It can contain **abstract method**s which don't have an implementation
+
+It can contain **default methods**, which have an implementation
+
+A struct/enum/primitive can implement a trait
+
+The implementor has to provide an implementation for a*ll of the abstract methods*
+
+The implementor can o*ptionally override the deault methods*
+
+**<T: Float>** -> this means *T* should be of type that implements ***Float** trait*.
