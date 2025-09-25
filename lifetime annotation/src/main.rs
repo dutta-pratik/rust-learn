@@ -1,4 +1,4 @@
-fn next_language<'a>(languages: &'a [String], current: &str) -> &'a str {
+fn next_language<'a>(languages: &'a [String], current: &str) -> &'a str {//explicitly telling using lifetime annotation that return string slice ref is referring to languages binding
     let mut found = false;
 
     for lang in languages {
@@ -14,11 +14,11 @@ fn next_language<'a>(languages: &'a [String], current: &str) -> &'a str {
     languages.last().unwrap()
 }
 
-fn last_language(languages: &[String]) -> &str {
+fn last_language(languages: &[String]) -> &str { //by default return string slice ref is refering to the available params
     languages.last().unwrap()
 }
 
-fn longest_language<'a>(lang_a: &'a str, lang_b: &'a str) -> &'a str {
+fn longest_language<'a>(lang_a: &'a str, lang_b: &'a str) -> &'a str { //explicitly telling using lifetime annotation that return string slice ref is referring to lang_a and lang_b bindings
     if lang_a.len() >= lang_b.len() {
         lang_a
     } else {
