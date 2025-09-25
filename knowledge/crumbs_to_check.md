@@ -181,3 +181,5 @@ The implementor has to provide an implementation for a*ll of the abstract method
 The implementor can o*ptionally override the deault methods*
 
 **<T: Float>** -> this means *T* should be of type that implements ***Float** trait*.
+
+All number is consider to be of trait **ToPrimitive**
