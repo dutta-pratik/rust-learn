@@ -82,7 +82,9 @@ Eg, in Result enum, we have **Ok()**, let's say if we don't have any value to se
 
 ---
 
-**'a**
+**'a - Lifetime annotation**
+
+Omitting lifetime annotation is referred to as **elision**
 
 ---
 
@@ -123,7 +125,6 @@ if it successfully reads the file, and if `read_file` function return `Ok('xyz')
 
 But in case if we receive error while reading the file, the **Err** will unwrap and will directly return the value present in the `Err(Error:other("Fail to read"));` and will not go to next line to print `txt`
 
-
 ---
 
 **Iterator**
@@ -134,7 +135,6 @@ At first, next point to the first element of the vector. when we call `next()` i
 `map` is an *adaptor* which is used to format element from iter object
 
 `for_each` is a function that is a iterator *consumer*. it calls `next()` automatically
-
 
 ---
 
